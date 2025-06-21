@@ -2,6 +2,11 @@
 
 # dependencies
 node_modules/
+ios/Pods/
+android/.gradle/
+android/app/build/
+*.log
+.env
 
 # Expo
 .expo/

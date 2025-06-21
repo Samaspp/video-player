@@ -1,50 +1,105 @@
-# Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+```markdown
+# React Native Video Player
 
-## Get started
+This is a secure, customizable video player application built with React Native and Expo. It provides advanced content protection and playback controls suitable for educational and enterprise use cases.
 
-1. Install dependencies
+## Features
 
-   ```bash
-   npm install
-   ```
+### Core Functionality
+- Play local or uploaded video files
+- Fullscreen playback with automatic orientation handling
+- Light and dark theme support with toggle
 
-2. Start the app
+### Security
+- Optional screenshot and screen recording prevention
+- Dynamic watermark containing username and timestamp
+- Screenshot attempt logging with display
 
-   ```bash
-   npx expo start
-   ```
+### Playback Controls
+- Play, pause, seek
+- Rewind and fast-forward (10-second increments)
+- Mute and unmute
+- Playback speed control (from 0.25x to 2x, capped at 2x)
+- Maximum fast-forward capped at 2x in secure mode
 
-In the output, you'll find options to open the app in a
+### Configuration
+- Secure Mode toggle: Enforces watermark, screenshot blocking, and playback restrictions
+- Advanced Settings: Optional granular control over watermark and screenshot blocking
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Project Structure
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+.
+├── App.tsx                      # Entry point with navigation
+├── components/
+│   └── Watermark.tsx           # Renders dynamic watermark on video
+├── context/
+│   └── AppContext.tsx          # Global state for theme and secure mode
+├── screens/
+│   ├── SettingsScreen.tsx      # Home/configuration screen
+│   ├── UploadScreen.tsx        # Optional screen for uploads (if implemented)
+│   └── PlayerScreen.tsx        # Main video player with security logic
+├── assets/
+│   └── Video/                  # Sample or uploaded video files
+└── README.md
 
-## Learn more
+````
 
-To learn more about developing your project with Expo, look at the following resources:
+## Getting Started
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Prerequisites
+- Node.js
+- Expo CLI
+- Android/iOS device or emulator
 
-## Join the community
+### Setup
 
-Join our community of developers creating universal apps.
+1. Clone the repository:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+git clone https://github.com/Samaspp/video-player.git
+cd video-player
+````
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npx expo start
+```
+
+4. Launch on device using the Expo Go app or an emulator.
+
+## Technologies Used
+
+* React Native
+* Expo
+* TypeScript (optional)
+* React Navigation
+* Expo AV (`expo-av`) for video
+* Expo Screen Capture (`expo-screen-capture`) for screenshot prevention
+* Custom hooks and context for global state management
+
+## Known Limitations
+
+* Expo's `preventScreenCaptureAsync` does not detect screenshot attempts. Logging is approximated and may not be 100% reliable.
+* Fullscreen watermark visibility is constrained due to native player limitations in `expo-av`.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Author
+
+Developed by \ Samassya P Pramod
+
+```
+
+---
