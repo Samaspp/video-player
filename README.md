@@ -1,5 +1,4 @@
 
-```markdown
 # React Native Video Player
 
 This is a secure, customizable video player application built with React Native and Expo. It provides advanced content protection and playback controls suitable for educational and enterprise use cases.
@@ -100,6 +99,3 @@ This project is licensed under the MIT License.
 
 Developed by \ Samassya P Pramod
 
-```
-
----
